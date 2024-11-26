@@ -1,0 +1,182 @@
+/* STOCK */
+.stock {
+  background-color: var(--black);
+  &__container {
+    display: grid;
+    grid-template-areas:
+      "stock-top stock-top"
+      "stock-form-box stock-images-box";
+
+    grid-template-columns: repeat(8, 1fr);
+
+    position: relative;
+    padding-top: calc(var(--indent-y) + 15px);
+  }
+  &__icon {
+    position: absolute;
+    top: 30px;
+    left: var(--indent-x);
+    width: clamp(3.25rem, 1.7rem + 7.75vw, 8.25rem);
+    height: clamp(3.25rem, 1.7rem + 7.75vw, 8.25rem);
+    svg {
+      width: clamp(3.875rem, 1.886rem + 9.94vw, 8.25rem);
+    }
+  }
+  &-top {
+    grid-area: stock-top;
+    grid-column: span 8;
+    margin-bottom: 25px;
+    &__title {
+      margin-left: calc(clamp(3.25rem, 1.7rem + 7.75vw, 8.25rem) + var(--gap));
+      margin-bottom: clamp(1.563rem, 1.272rem + 1.45vw, 2.5rem);
+      font-weight: 400;
+      font-family: "Archangelsk", sans-serif;
+      font-size: clamp(1.875rem, 1.255rem + 3.1vw, 3.875rem);
+      color: var(--white);
+    }
+
+    &__desc {
+      max-width: 952px;
+      font-size: clamp(1rem, 0.961rem + 0.19vw, 1.125rem);
+      line-height: clamp(2rem, 1.961rem + 0.19vw, 2.125rem);
+      color: var(--white);
+
+      strong {
+        color: var(--blue);
+      }
+    }
+  }
+  &__form-box {
+    grid-area: stock-form-box;
+    grid-column: span 3;
+    /* form */
+    .stock-form {
+      color: var(--gray);
+
+      display: flex;
+      flex-flow: column nowrap;
+      &__input {
+        margin-bottom: var(--gap);
+        padding: 13px 0;
+        color: var(--white);
+        border-bottom: 1px solid var(--gray);
+
+        &:focus {
+          &::placeholder {
+            color: transparent;
+          }
+        }
+
+        &::placeholder {
+          font-size: clamp(1rem, 0.961rem + 0.19vw, 1.125rem);
+          color: var(--gray);
+        }
+
+        &-file-text {
+          margin-bottom: 7px;
+          text-decoration-line: underline;
+          font-size: clamp(1rem, 0.961rem + 0.19vw, 1.125rem);
+          line-height: clamp(1.188rem, 1.149rem + 0.19vw, 1.313rem);
+          color: var(--white);
+          cursor: pointer;
+        }
+
+        &-file-format {
+          font-size: 12px;
+          line-height: 14px;
+          color: var(--white);
+        }
+
+        &.stock-submit {
+          margin-bottom: 15px;
+          padding: var(--padding-btn-y) var(--padding-btn-x);
+          max-width: 192px;
+          background-color: var(--yellow);
+          border: 1px solid var(--yellow);
+          color: var(--black);
+          cursor: pointer;
+
+          &:focus {
+            &:not(:active):not(:hover) {
+              outline: 2px solid var(--yellow);
+              outline-offset: 2px;
+            }
+          }
+          &:hover {
+            background-color: var(--black);
+            color: var(--yellow);
+          }
+          &:active {
+            background-color: var(--yellow);
+            color: var(--black);
+          }
+        }
+      }
+      &__input-box {
+        position: relative;
+
+        flex-flow: column nowrap;
+
+        margin-bottom: var(--gap);
+        height: 120px;
+        border: 1px dashed var(--gray);
+      }
+      &__input-file {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 0;
+      }
+
+      &__label--checkbox {
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      &__checkbox {
+        width: 14px;
+        height: 14px;
+        border: 1px solid var(--gray);
+
+        svg {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      .stock-checkbox {
+        position: absolute;
+        z-index: -1;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        &:checked + .stock-form__checkbox svg {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  /* image */
+  &-images-box {
+    grid-area: stock-images-box;
+    grid-column: span 5;
+    position: relative;
+
+    display: flex;
+    img {
+      display: inline-block;
+      &:nth-child(1) {
+        position: relative;
+        z-index: 1;
+      }
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}

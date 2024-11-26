@@ -1,0 +1,257 @@
+@media (max-width: 1335.98px) {
+  /* STOCK */
+  .stock {
+    // background-image: url("./../img/stock-bg-mobile.jpeg");
+    background-size: contain;
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "stock-top stock-images-box"
+        "stock-form-box stock-images-box";
+    }
+    &__icon {
+      top: 0;
+    }
+    &-top {
+      grid-column: span 3;
+      &__title {
+        margin-top: 70px;
+        margin-left: 0;
+        max-width: 460px;
+      }
+    }
+    &-form-box {
+      grid-column: span 3;
+    }
+    &-images-box {
+      grid-column: span 3;
+      flex-flow: column nowrap;
+      img {
+        &:nth-child(2) {
+          position: relative;
+          top: auto;
+          right: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023.98px) {
+  /* HERO */
+  .hero {
+    &__title {
+      max-width: 620px;
+    }
+    &__desc {
+      max-width: 788px;
+    }
+    &-gallery {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "item-1 item-2"
+        "item-3 item-3";
+
+      & .item-3 {
+        min-height: 424px;
+      }
+    }
+  }
+
+  /* PROMOTION */
+  .promotion {
+    &-box {
+      &__title {
+        max-width: 460px;
+      }
+    }
+    &-images {
+      &__brands {
+        flex-flow: column nowrap;
+      }
+    }
+  }
+
+  /* SALE */
+  .sale {
+    grid-template-columns: repeat(6, 1fr);
+
+    &__image {
+      grid-column: span 2;
+
+      img {
+        max-width: none;
+      }
+    }
+    &__container {
+      grid-column: span 4;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  /* FOOTER */
+  .footer {
+    &-top {
+      &__images,
+      &__links {
+        flex-flow: column nowrap;
+        gap: 15px;
+      }
+
+      &__logo {
+        &.cyberpunk {
+          max-width: 200px;
+        }
+        &.project-logo {
+          max-width: 116px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* HEADER */
+  .header {
+    &__top {
+      flex-flow: column nowrap;
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* HEADER */
+  .header {
+    .swiper {
+      &-slide {
+        &.slide-1 {
+          background-image: url("./../img/header-bg-mobile-1.jpeg");
+        }
+        &.slide-2 {
+          background-image: url("./../img/header-bg-mobile-2.jpeg");
+        }
+        &.slide-3 {
+          background-image: url("./../img/header-bg-mobile-3.jpeg");
+        }
+      }
+    }
+    &__container {
+      min-height: 713px;
+    }
+    &__socials {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0;
+    }
+    &-bottom {
+      right: 0;
+      left: 0;
+      bottom: -50px;
+    }
+  }
+
+  /* HERO */
+  .hero {
+    &__container {
+      padding-top: calc(var(--indent-y) + 50px);
+    }
+    &__gallery {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+  }
+
+  /* STOCK */
+  .stock {
+    &__container {
+      grid-template-areas: "stock-images-box" "stock-top" "stock-form-box";
+      grid-gap: 0;
+    }
+    &-top {
+      grid-column: span 6;
+
+      margin-bottom: 70px;
+      &__title {
+        margin-top: 0;
+      }
+    }
+    &-form-box {
+      grid-column: span 6;
+    }
+    &-images-box {
+      grid-column: span 6;
+
+      margin-bottom: 25px;
+      justify-content: space-between;
+      flex-flow: row nowrap;
+
+      img {
+        width: 50%;
+      }
+    }
+  }
+
+  /* PROMOTION */
+  .promotion {
+    &__container {
+      flex-flow: column nowrap;
+    }
+    &-images {
+      &__brands {
+        width: 100%;
+        flex-flow: row nowrap;
+        gap: 15px;
+      }
+    }
+
+    &-box {
+      &__advantage {
+        margin-bottom: 40px;
+
+        &-text {
+          max-width: 251px;
+        }
+      }
+    }
+  }
+
+  /* SALE */
+  .sale {
+    grid-template-columns: repeat(6, 1fr);
+
+    &__image {
+      grid-column: span 6;
+    }
+    &__container {
+      grid-column: span 6;
+    }
+
+    &-list {
+      li {
+        p {
+          max-width: 254px;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      min-height: 198px;
+    }
+  }
+
+  /* FOOTER */
+  .footer {
+    &-top {
+      &__container {
+        grid-gap: 25px;
+      }
+      &__images,
+      &__links {
+        grid-column: span 8;
+      }
+    }
+  }
+}

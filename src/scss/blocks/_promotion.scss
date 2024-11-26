@@ -1,0 +1,94 @@
+/* PROMOTION */
+.promotion {
+  padding-top: var(--indent-y);
+  background-color: var(--yellow);
+
+  &__container {
+    display: flex;
+    // grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+  }
+
+  &-images {
+    flex-flow: column nowrap;
+    gap: var(--gap);
+
+    flex: 1 1 50%;
+
+    &__brands {
+      gap: var(--gap);
+
+      img {
+        &:nth-child(1) {
+          width: clamp(2.75rem, 1.727rem + 5.11vw, 5rem);
+        }
+        &:nth-child(3) {
+          width: clamp(10.938rem, 6.818rem + 20.6vw, 20rem);
+        }
+      }
+
+      svg {
+        width: clamp(3.125rem, 1.989rem + 5.68vw, 5.625rem);
+      }
+    }
+  }
+
+  &-box {
+    flex: 1 1 50%;
+    &__title {
+      margin-bottom: 25px;
+      font-weight: 400;
+      font-family: "Archangelsk", sans-serif;
+      font-size: clamp(1.875rem, 1.255rem + 3.1vw, 3.875rem);
+    }
+    &__desc {
+      margin-bottom: 25px;
+      font-size: clamp(1rem, 0.961rem + 0.19vw, 1.125rem);
+      line-height: clamp(2rem, 1.961rem + 0.19vw, 2.125rem);
+    }
+
+    &__advantage {
+      margin-bottom: 40px;
+
+      &-text {
+        font-size: clamp(1rem, 0.961rem + 0.19vw, 1.125rem);
+        line-height: clamp(1.188rem, 1.149rem + 0.19vw, 1.313rem);
+      }
+    }
+
+    & li {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+      font-size: clamp(1rem, 0.961rem + 0.19vw, 1.125rem);
+      line-height: clamp(2rem, 1.961rem + 0.19vw, 2.125rem);
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__btn {
+      padding: var(--padding-btn-y) var(--padding-btn-x);
+      background-color: var(--black);
+      border: 2px solid var(--black);
+      color: var(--yellow);
+
+      &:focus {
+        &:not(:hover):not(:active) {
+          outline: 3px solid var(--black);
+          outline-offset: 2px;
+        }
+      }
+      &:hover {
+        background-color: var(--yellow);
+        color: var(--black);
+      }
+      &:active {
+        background-color: var(--black);
+        color: var(--yellow);
+      }
+    }
+  }
+}

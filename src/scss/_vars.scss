@@ -1,0 +1,14 @@
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --white: rgba(255, 255, 255, 1);
+  --yellow: rgba(248, 242, 0, 1);
+  --gray: rgba(119, 119, 119, 1);
+  --blue: rgba(82, 190, 220, 1);
+
+  --gap: 30px;
+  --indent-x: clamp(0.75rem, 0.285rem + 2.33vw, 2.25rem);
+  --indent-y: clamp(2.5rem, 1.919rem + 2.91vw, 4.375rem);
+
+  --padding-btn-x: 50px;
+  --padding-btn-y: 20px;
+}
